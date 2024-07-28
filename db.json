@@ -1,68 +1,16 @@
 {
   "dishes": [
     {
-      "id": "1",
-      "name": "Burger",
-      "price": 10
-    },
-    {
-      "id": "2",
-      "name": "Pizza",
-      "price": 15
-    },
-    {
-      "id": "3",
-      "name": "Pasta",
-      "price": 12
-    },
-    {
-      "id": "4",
-      "name": "Salad",
-      "price": 8
-    },
-    {
-      "id": "5",
-      "name": "Sandwich",
-      "price": 6
-    },
-    {
-      "id": "6",
-      "name": "Sushi",
-      "price": 20
-    },
-    {
-      "id": "7",
-      "name": "Tacos",
-      "price": 10
-    },
-    {
-      "id": "8",
-      "name": "Wings",
-      "price": 8
-    },
-    {
-      "id": "57ef",
-      "name": "dsdsd",
-      "description": "dsdsd",
+      "id": "01f3",
+      "name": "sss",
+      "description": "sssss",
       "price": 3
     },
     {
-      "id": "7ddf",
-      "name": "dsds",
-      "description": "dsdsd",
-      "price": 5
-    },
-    {
-      "id": "088e",
-      "name": "dfdfdf",
+      "id": "ca3c",
+      "name": "dfdfd",
       "description": "dfdfd",
-      "price": 2
-    },
-    {
-      "id": "b648",
-      "name": "222",
-      "description": "rfdfdf",
-      "price": 5
+      "price": 1
     }
   ]
 }

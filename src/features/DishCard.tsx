@@ -1,8 +1,11 @@
 import React from 'react'
 import { Dish } from './dishSlice';
+
+
 interface DishCardProps {
     dish: Dish;
 }
+
 function DishCard(props: DishCardProps) {
     return (
         <div className="sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 p-4 shadow-md">

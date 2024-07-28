@@ -18,7 +18,7 @@ function DishList() {
 
     return (
         <div>
-            <AddDish/>
+            <AddDish />
             <div className="flex flex-wrap justify-center">
                 {dishes.map((dish) => (
                     <DishCard key={dish.id} dish={dish} />
