@@ -13,7 +13,6 @@
     "@types/react-dom": "^18.3.0",
     "autoprefixer": "^10.4.19",
     "axios": "^1.7.2",
-    "json-server": "^1.0.0-beta.1",
     "postcss": "^8.4.40",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -27,7 +26,6 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "start:server": "json-server --watch db.json --port 3005",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

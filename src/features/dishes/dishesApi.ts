@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import apiClient from "../utils/api";
+import apiClient from "../../utils/api";
 import { Dish } from "./dishSlice";
 
 

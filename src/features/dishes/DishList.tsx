@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { useAppDispatch, useAppSelector } from '../store/store';
+import { useAppDispatch, useAppSelector } from '../../store/store';
 import DishCard from './DishCard';
 import { fetchAllDishes } from './dishesApi';
 import AddDish from './AddDish';

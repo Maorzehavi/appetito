@@ -3,7 +3,7 @@ import appConfig from "./config";
 
 
 const apiClient = axios.create({
-    // baseURL: appConfig.productsUrl,
+    baseURL: appConfig.productsUrl,
     headers: {
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*",

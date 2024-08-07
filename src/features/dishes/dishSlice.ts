@@ -1,12 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { createDish, deleteDish, fetchAllDishes, fetchDishById, updateDish } from "./dishesApi";
+import { UUID } from "crypto";
 
 interface Dish {
-    id?: string;
+    id?: UUID;
     name: string;
-    price: number;
     description: string;
-    image: string;
+    image: string|FileList;
   }
 
 interface DishState {
