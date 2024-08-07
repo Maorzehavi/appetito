@@ -1,9 +1,11 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import dishSlice from "../features/dishes/dishSlice";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
+import imageSlice from "../features/images/imageSlice";
 
 const rootReducer = combineReducers({
     dishes: dishSlice,
+    images: imageSlice
 
 })
 

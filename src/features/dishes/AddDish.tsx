@@ -4,6 +4,7 @@ import { AppDispatch, useAppDispatch } from '../../store/store';
 import { createDish } from './dishesApi';
 import { Dish } from './dishSlice';
 import apiClient from '../../utils/api';
+import { createImage } from '../images/imageApi';
 
 function AddDish() {
   const { handleSubmit, reset, register, formState: { errors, isValid } } = useForm<Dish>({
@@ -21,29 +22,14 @@ function AddDish() {
         if (createdDish.id) { // Ensure createdDish.id is defined
           console.log('Dish ID:', createdDish.id);
           console.log('Image:', data.image[0]);
-
-          // Creating FormData for image upload
-          const formData = new FormData();
-          formData.append('image', data.image[0] as File); // Append the image file
-          formData.append('dishId', createdDish.id.toString()); // Append the dishId
-
-          // Upload the image
-          const imageResponse = await apiClient.post('/images', formData, {
-            headers: {
-              'Content-Type': 'multipart/form-data',
-            },
-          });
-
-          console.log('Image uploaded:', imageResponse.data);
-          reset();
-        } else {
-          console.error('Created dish ID is undefined');
+          await appDispatch(createImage({ file: data.image[0] as File, dishId: createdDish.id }));
         }
+        reset();
       }
     } catch (error) {
-      console.error('Failed to create dish or upload image:', error);
+      console.error('Failed to save the dish: ', error);
     }
-  };
+  }
   return (
     <div>
       <form onSubmit={handleSubmit(onSubmit)}>
