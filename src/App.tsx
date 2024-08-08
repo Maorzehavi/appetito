@@ -5,8 +5,7 @@ import DishList from './features/dishes/DishList';
 import Home from './pages/Home';
 import background from './assets/images/HOME.jpg'
 import NavBar from './components/NavBar';
-import axios from 'axios';
-import apiClient from './utils/api';
+
 function App() {
 
 

@@ -4,7 +4,6 @@ import { AppDispatch, useAppDispatch } from '../../store/store';
 import { createDish } from './dishesApi';
 import { Dish } from './dishSlice';
 import apiClient from '../../utils/api';
-import { createImage } from '../images/imageApi';
 
 function AddDish() {
   const { handleSubmit, reset, register, formState: { errors, isValid } } = useForm<Dish>({
@@ -17,13 +16,6 @@ function AddDish() {
     try {
       const resultAction = await appDispatch(createDish(data));
       if (createDish.fulfilled.match(resultAction)) {
-        const createdDish = resultAction.payload;
-
-        if (createdDish.id) { // Ensure createdDish.id is defined
-          console.log('Dish ID:', createdDish.id);
-          console.log('Image:', data.image[0]);
-          await appDispatch(createImage({ file: data.image[0] as File, dishId: createdDish.id }));
-        }
         reset();
       }
     } catch (error) {
