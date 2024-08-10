@@ -2,12 +2,17 @@ import React, { useEffect } from 'react'
 import { Dish } from './dishSlice';
 import appConfig from '../../utils/config';
 import { useAppDispatch } from '../../store/store';
+import { deleteDish } from './dishesApi';
 
 
 interface DishCardProps {
     dish: Dish;
 }
 function DishCard(props: DishCardProps) {
+    const dispatch = useAppDispatch();
+    const handleOnClick = () => {
+        dispatch(deleteDish(props.dish.id as string));
+    }
 
 
 
@@ -19,6 +24,7 @@ function DishCard(props: DishCardProps) {
                 <div className="sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-gray-900">{props.dish.name}</div>
                 <p className="sm:text-sm md:text-base lg:text-lg xl:text-xl text-gray-600">{props.dish.description}</p>
             </div>
+                <button onClick={handleOnClick}>מחק</button>
             <div className="sm:h-12 md:h-16 lg:h-20 xl:h-24 p-4 flex justify-between items-center">
             </div>
         </div>
