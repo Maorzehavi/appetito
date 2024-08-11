@@ -13,8 +13,8 @@ function App() {
 
 
   return (
-    <div className='h-full '>
-      <div className='bg-cover bg-center h-full min-h-screen' >
+    <div className='h-full'>
+      <div className="bg-cover bg-center h-full min-h-screen " >
         <div className='top-0 sticky'>
         <NavBar />
         </div>

@@ -3,28 +3,31 @@ import homeImg from '../assets/images/HOME.jpg'
 
 function Home() {
   return (
-    <div className='flex bg-gray-300'>
-      <div className='flex-1'>
-        <div className='flex'>
-
-          <img src={homeImg} alt='Home' className='w-1/2' />
-          <div className='flex-1 p-4'>
-            <h1 className='text-5xl font-bold'>ברוכים הבאים למסעדת הפלאים</h1>
-            <p className='text-2xl'>מסעדת הפלאים מציעה מגוון רחב של מנות עם טעמים מרתקים מכל העולם</p>
-            <div className='flex justify-between'>
-              <div>
-                <h2 className='text-3xl font-bold'>אודות</h2>
-                <p className='text-xl'>מסעדת הפלאים היא מסעדה כשרה המציעה מגוון רחב של מנות עם טעמים מרתקים מכל העולם</p>
-              </div>
-              <div>
-                <h2 className='text-3xl font-bold'>צור קשר</h2>
-                <p className='text-xl'>מסעדת הפלאים ממוקמת ברחוב המסעדות 5, תל אביב</p>
-                <p className='text-xl'>טלפון: 03-1234567</p>
-              </div>
-            </div>
+    <div className='flex scroll-m-0'>
+      <section className='flex flex-col items-center justify-center h-screen w-full bg-cover bg-center' style={{backgroundImage: `url(${homeImg})`}}>
+        <div className='flex flex-col items-center justify-center w-1/2 h-1/2 bg-gray-800 bg-opacity-90'>
+          <h1 className='text-4xl text-white'>Appetito</h1>
+          <p className='text-white'>אוכל טעים ובריא מהמטבח האיטלקי</p>
           </div>
+
+
+      </section>
+      {/* summery */}
+      <section className='flex flex-col items-center justify-center h-screen w-full bg-cover bg-center' style={{backgroundImage: `url(${homeImg})`}}>
+        <div className='flex flex-col items-center justify-center w-1/2 h-1/2 bg-gray-800 bg-opacity-90'>
+          <h1 className='text-4xl text-white'>Appetito</h1>
+          <p className='text-white'>אוכל טעים ובריא מהמטבח האיטלקי</p>
+          </div>
+
+      </section>
+      <div >
+      </div>
+      <div>
+        <div className='flex-'>
+
         </div>
       </div>
+
     </div>
   )
 }

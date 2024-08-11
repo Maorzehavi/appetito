@@ -28,8 +28,8 @@ function NavBar() {
     }
 
     return (
-        <div className='rounded-b-xl'>
-            <nav className="flex flex-wrap justify-between bg-gray-700 items-center relative p-12 bg-opacity-75 ">
+        <div className='shadow-2xl'>
+            <nav className="flex flex-wrap justify-between bg-gray-700 items-center relative p-12 bg-opacity-90 ">
                 {/* Left Section (Empty for spacing) */}
                 <div className='absolute text-gray-400' onClick={handleOnClick}> APPETITO</div>
                 {/* Logo */}
