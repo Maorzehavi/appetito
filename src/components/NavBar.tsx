@@ -28,14 +28,14 @@ function NavBar() {
     }
 
     return (
-        <div className='shadow-2xl'>
+        <div className='shadow-2xl sticky top-0'>
             <nav className="flex flex-wrap justify-between bg-gray-700 items-center relative p-12 bg-opacity-90 ">
                 {/* Left Section (Empty for spacing) */}
                 <div className='absolute text-gray-400' onClick={handleOnClick}> APPETITO</div>
                 {/* Logo */}
                 <div className="flex flex-1"></div>
                 {/* Centered Nav Items */}
-                <div className="flex gap-4 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-12 absolute left-1/2 transform -translate-x-1/2 ">
+                <div className="flex sm:gap-3 md:gap-8 lg:gap-10 xl:gap-12 absolute left-1/2 transform -translate-x-1/2 ">
                     {navItems.map((item) => (
                         <NavLink
                             key={item.path}

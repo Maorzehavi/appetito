@@ -1,8 +1,9 @@
 import React from 'react'
+import DishList from '../features/dishes/DishList'
 
 function Menu() {
   return (
-    <div>Menu</div>
+    <div><DishList/></div>
   )
 }
 
