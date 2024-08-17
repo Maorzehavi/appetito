@@ -10,24 +10,27 @@ const login = createAsyncThunk(
   "auth/login",
   async (loginRequest: LoginRequest) => {
     const response = await apiClient.post("/auth/login", loginRequest);
-    localStorage.setItem("accessToken", response.data.accessToken);
-    localStorage.setItem("refreshToken", response.data.refreshToken);
+    sessionStorage.setItem("accessToken", response.data.accessToken);
+    sessionStorage.setItem("refreshToken", response.data.refreshToken);
     return response.data;
   }
 );
 
 const logout = createAsyncThunk("auth/logout", async () => {
-  localStorage.removeItem("accessToken");
-  localStorage.removeItem("refreshToken");
+  sessionStorage.removeItem("accessToken");
+  sessionStorage.removeItem("refreshToken");
   await apiClient.post("/auth/logout");
 });
 
-const refreshToken = createAsyncThunk("auth/refreshToken", async () => {
-  const response = await apiClient.post("/auth/refresh-token");
-  localStorage.setItem("accessToken", response.data.accessToken);
-  localStorage.setItem("refreshToken", response.data.refreshToken);
-  return response.data;
-});
+// const refreshToken = createAsyncThunk("auth/refreshToken", async () => {
+//   console.log("-----------refreshToken--------------");
+//   apiClient.defaults.headers.common["Authorization"] = `Bearer ${sessionStorage.getItem("accessToken")}`;
+//   const response = await apiClient.post("/auth/refresh-token");
+//   sessionStorage.setItem("accessToken", response.data.accessToken);
+//   sessionStorage.setItem("refreshToken", response.data.refreshToken);
+//   apiClient.defaults.headers.common["Authorization"] = `Bearer ${response.data.accessToken}`;
+//   return response.data;
+// });
 
 
-export { login, logout, refreshToken };
+export { login, logout };

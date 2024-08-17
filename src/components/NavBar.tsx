@@ -20,7 +20,7 @@ function NavBar() {
     ];
 
     const handleOnClick = () => {
-        if (localStorage.getItem('token')) {
+        if (sessionStorage.getItem('accessToken')) {
             navigate({pathname: '/admin'});
         } else {
             navigate({pathname: '/login'});

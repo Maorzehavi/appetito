@@ -1,9 +1,11 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import dishSlice from "../features/dishes/dishSlice";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
+import authSlice from "../features/auth/authSlice";
 
 const rootReducer = combineReducers({
     dishes: dishSlice,
+    auth: authSlice,
 
 
 })

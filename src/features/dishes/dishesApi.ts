@@ -2,10 +2,6 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import apiClient from "../../utils/api";
 import { Dish } from "./dishSlice";
 import appConfig from "../../utils/config";
-import { refreshToken } from "../auth/authApi";
-
-
-
 
 const fetchAllDishes = createAsyncThunk<Dish[], void>(
   "dishes/fetchAllDishes",
@@ -31,10 +27,6 @@ const createDish = createAsyncThunk<Dish, Dish>(
   "dishes/createDish",
   async (newDish: Dish) => {
     const response = await apiClient.post("/dishes", newDish);
-    // if error make refresh token
-    if (response.status === 401 || response.status === 403) {
-      refreshToken();
-    }
     const formData = new FormData();
     formData.append("image", newDish.image[0] as File);
     formData.append("dishId", response.data.id);

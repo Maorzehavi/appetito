@@ -2,15 +2,19 @@ import React from 'react'
 import { useForm } from 'react-hook-form'
 import { login, LoginRequest } from './authApi'
 import { useAppDispatch } from '../../store/store'
+import { useNavigate } from 'react-router-dom'
 
 function LoginForm() {
     const dispatch = useAppDispatch()
+    const navigate = useNavigate()
     const { handleSubmit, reset, register } = useForm<LoginRequest>()
 
     const onSubmit = async (data: LoginRequest) => {
-        console.log(data)
         const response = await dispatch(login(data))
-        console.log(response)
+        if (login.fulfilled.match(response)) {
+            reset()
+            navigate('/admin')
+        }
     }
     return (
         <div>
