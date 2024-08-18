@@ -14,8 +14,8 @@ function NavBar() {
 
     const navItems = [
         // {name: 'ניהול', path: '/admin'},
-        {name: 'מנות', path: '/menu'},
         {name: 'אודות', path: '/about'},
+        {name: 'מנות', path: '/menu'},
         {name: 'בית', path: '/'},
     ];
 
@@ -29,9 +29,9 @@ function NavBar() {
 
     return (
         <div className='shadow-2xl sticky top-0'>
-            <nav className="flex flex-wrap justify-between bg-gray-700 items-center relative p-12 bg-opacity-90 ">
+            <nav className="flex flex-wrap justify-between bg-[#b8ac96] items-center relative p-12 bg-opacity-90 shadow-inner text-gray-700 ">
                 {/* Left Section (Empty for spacing) */}
-                <div className='absolute text-gray-400' onClick={handleOnClick}> APPETITO</div>
+                <div className='absolute ' onClick={handleOnClick}> APPETITO</div>
                 {/* Logo */}
                 <div className="flex flex-1"></div>
                 {/* Centered Nav Items */}
@@ -40,7 +40,7 @@ function NavBar() {
                         <NavLink
                             key={item.path}
                             to={item.path}
-                            className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-gray-400 hover:text-gray-100 px-2 sm:px-4">
+                            className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl hover:text-gray-100 px-2 sm:px-4">
                             {item.name}
                         </NavLink>
                     ))}
@@ -54,7 +54,7 @@ function NavBar() {
                             to={link.url}
                             target="_blank"
                             rel="noreferrer"
-                            className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-gray-400 hover:text-gray-100">
+                            className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl hover:text-gray-100 font-bold">
                             {link.icon}
                         </NavLink >
                     ))}

@@ -1,5 +1,3 @@
-
-import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import NavBar from './components/NavBar';
@@ -13,8 +11,8 @@ function App() {
 
 
   return (
-    <div className='h-full'>
-      <div className="bg-cover bg-center h-full min-h-screen " >
+    <div className="h-full  bg-gradient-to-br from-[#FFE8C2] to-[#CECFC7]">
+      <div className="bg-cover bg-center h-full min-h-screen">
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />

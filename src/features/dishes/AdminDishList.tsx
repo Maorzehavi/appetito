@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
 import { useAppDispatch, useAppSelector } from '../../store/store';
-import DishCard from './DishCard';
 import { fetchAllDishes } from './dishesApi';
+import AdminDishCard from './AdminDishCard';
 
-function DishList() {
+function AdminDishList() {
 
     const appDispatch = useAppDispatch();
     const appSelector = useAppSelector;
@@ -17,9 +17,9 @@ function DishList() {
 
     return (
         <div>
-            <div className="flex flex-wrap justify-center">
+            <div className="flex flex-wrap justify-center gap-5">
                 {dishes.map((dish) => (
-                    <DishCard key={dish.id} dish={dish} />
+                    <AdminDishCard key={dish.id} dish={dish} />
                 ))}
             </div>
         </div>
@@ -27,4 +27,4 @@ function DishList() {
     )
 }
 
-export default DishList
+export default AdminDishList

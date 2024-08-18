@@ -23,45 +23,67 @@ function AddDish() {
     }
   }
   return (
-    <div>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <label>
-          Name:
-          <input
-            type="text"
-            {...register('name', {
-              required: 'Name is required',
-              minLength: { value: 3, message: 'Name must be at least 3 characters long' }
-            })}
-          />
-          {errors.name && <p>{errors.name.message}</p>}
-        </label>
+    <div className="flex justify-center items-center min-h-screen">
+    <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="bg-white p-6 rounded-lg shadow-md w-full max-w-md"
+    >
+        <div className="mb-4">
+            <label className="block text-gray-700 text-sm font-bold mb-2 text-center">
+                שם מנה
+                <input
+                    type="text"
+                    {...register('name', {
+                        required: 'שם המנה הוא שדה חובה',
+                        minLength: { value: 3, message: 'שם המנה צריך להיות לפחות 3 אותיות' }
+                    })}
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                />
+                {errors.name && <p className="text-red-500 text-xs italic">{errors.name.message}</p>}
+            </label>
+        </div>
 
-        <label>
-          Description:
-          <input
-            type="text"
-            {...register('description', {
-              required: 'Description is required',
-              minLength: { value: 5, message: 'Description must be at least 5 characters long' }
-            })}
-          />
-          {errors.description && <p>{errors.description.message}</p>}
-        </label>
-        <label>
-          Image file:
-          <input
-            type="file"
-            {...register('image', {
-              required: 'Image is required'
-            })}
-          />
+        <div className="mb-4">
+            <label className="block text-gray-700 text-sm font-bold mb-2 text-center">
+                תיאור
+                <input
+                    type="text"
+                    {...register('description', {
+                        required: 'תיאור המנה הוא שדה חובה',
+                        minLength: { value: 5, message: 'תיאור המנה צריך להיות לפחות 5 אותיות' }
+                    })}
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                />
+                {errors.description && <p className="text-red-500 text-xs italic">{errors.description.message}</p>}
+            </label>
+        </div>
 
-        </label>
+        <div className="mb-6">
+            <label className="block text-gray-700 text-sm font-bold mb-2 text-center">
+              תמונה
+                <input
+                    type="file"
+                    accept='image/*'
+                    {...register('image', {
+                        required: 'תמונה היא שדה חובה'
+                    })}
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                />
+                {errors.image && <p className="text-red-500 text-xs italic">{errors.image.message}</p>}
+            </label>
+        </div>
 
-        <button type="submit">Submit</button>
-      </form>
-    </div>
+        <div className="flex items-center justify-between">
+            <button
+                type="submit"
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            >
+                Submit
+            </button>
+        </div>
+    </form>
+</div>
+
   )
 }
 
