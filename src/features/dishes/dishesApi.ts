@@ -8,7 +8,7 @@ const fetchAllDishes = createAsyncThunk<Dish[], void>(
   async () => {
     const response = await apiClient.get("/dishes");
     response.data.forEach((dish: Dish) => {
-      dish.image = `${appConfig.productsImagesUrl}${dish.id}`;
+      dish.image = `${appConfig.baseImageUrl}${dish.id}`;
     });
     return response.data;
   }
@@ -18,7 +18,7 @@ const fetchDishById = createAsyncThunk<Dish[], string>(
   "dishes/fetchDishById",
   async (dishId: string) => {
     const response = await apiClient.get(`/dishes/${dishId}`);
-    response.data.image = `${appConfig.productsImagesUrl}${dishId}`;
+    response.data.image = `${appConfig.baseImageUrl}${dishId}`;
     return response.data;
   }
 );
@@ -33,9 +33,10 @@ const createDish = createAsyncThunk<Dish, Dish>(
     await apiClient.post("/images", formData, {
       headers: {
         "Content-Type": "multipart/form-data",
+
       },
     });
-    response.data.image = `${appConfig.productsImagesUrl}${response.data.id}`;
+    response.data.image = `${appConfig.baseImageUrl}${response.data.id}`;
     return response.data;
   }
 );
@@ -47,7 +48,7 @@ const updateDish = createAsyncThunk<Dish, Dish>(
       `/dishes/${updatedDish.id}`,
       updatedDish
     );
-    response.data.image = `${appConfig.productsImagesUrl}${response.data.id}`;
+    response.data.image = `${appConfig.baseImageUrl}${response.data.id}`;
     return response.data;
   }
 );
