@@ -11,7 +11,7 @@ function App() {
 
 
   return (
-    <div className="h-full  bg-gradient-to-br from-[#FFE8C2] to-[#CECFC7] scroll-smooth">
+    <div className="h-full  bg-gradient-to-br from-[#FFE8C2] to-[#CECFC7] scroll-smooth font-[M PLUS Rounded 1c]">
       <div className="bg-cover bg-center h-full min-h-screen">
         <NavBar />
         <Routes>
